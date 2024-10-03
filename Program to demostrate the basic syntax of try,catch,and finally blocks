@@ -1,0 +1,14 @@
+public class TryCatchFinallyExample {
+    public static void main(String[] args) {
+        try {
+            int result = 10 / 0;  // This will cause an ArithmeticException
+            System.out.println("Result: " + result);
+        } catch (ArithmeticException e) {
+            System.out.println("Exception caught: " + e.getMessage());
+        } finally {
+            System.out.println("This will always execute, whether exception occurs or not.");
+        }
+
+        System.out.println("Program continues after try-catch-finally block.");
+    }
+}
