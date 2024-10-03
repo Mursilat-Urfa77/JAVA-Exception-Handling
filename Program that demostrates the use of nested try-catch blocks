@@ -1,0 +1,37 @@
+public class NestedTryCatchDemo {
+
+    public static void main(String[] args) {
+        try {
+           
+            System.out.println("Outer try block starts");
+            
+            int[] numbers = {1, 2, 3};
+            
+            try {
+               
+                System.out.println("Inner try block 1 starts");
+                int result = numbers[3]; // This will cause ArrayIndexOutOfBoundsException
+                System.out.println("This line won't execute due to exception");
+            } catch (ArrayIndexOutOfBoundsException e) {
+                System.out.println("ArrayIndexOutOfBoundsException caught in inner try block 1");
+            }
+
+            try {
+      
+                System.out.println("Inner try block 2 starts");
+                int result = 10 / 0; // This will cause ArithmeticException
+                System.out.println("This line won't execute due to exception");
+            } catch (ArithmeticException e) {
+                System.out.println("ArithmeticException caught in inner try block 2");
+            }
+
+            System.out.println("Outer try block ends");
+
+        } catch (Exception e) {
+          
+            System.out.println("Exception caught in outer try block");
+        }
+
+        System.out.println("Program continues after nested try-catch blocks");
+    }
+}
