@@ -1,0 +1,24 @@
+public class ExceptionHandlingDemo {
+    public static void checkedExceptionMethod() throws Exception {
+        System.out.println("Checked Exception Method: Trying to open a file.");
+        throw new Exception("File not found");
+    }
+    public static void uncheckedExceptionMethod() {
+        System.out.println("Unchecked Exception Method: Trying to access an invalid array index.");
+        int[] arr = new int[5];
+        System.out.println(arr[10]); // This will throw ArrayIndexOutOfBoundsException
+    }
+
+    public static void main(String[] args) {
+        try {
+            checkedExceptionMethod();
+        } catch (Exception e) {
+            System.out.println("Caught checked exception: " + e.getMessage());
+        }
+        try {
+            uncheckedExceptionMethod();
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Caught unchecked exception: " + e.getMessage());
+        }
+    }
+}
